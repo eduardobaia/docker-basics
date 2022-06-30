@@ -1,0 +1,36 @@
+
+#
+docker images 
+
+docker ps
+
+docker run imageName
+
+#criar uma instancia com magem X e porta  Y 
+NOME + PORTA(externa:interna[do dentro do docker ]) + NOME-image 
+docker run --name simpleApiEdu -p 4100:4100 myapp 
+
+
+Docker run.. create a new image...
+ to start
+
+ docker start myImage
+
+#remore image
+ docker image rm myapp 
+
+#remove all container and images 
+ docker system prune -a 
+
+
+ //create a image with version  . means directory
+ docker build -t myapp:v2 .
+
+
+
+( a image is a model, example of what you want to have as container. So IMAGES are the models. Containers are the machine.)
+
+
+
+#####################################################################################################################
+### V O L  U  M E S  ################################################################################################
