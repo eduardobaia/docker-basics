@@ -34,3 +34,34 @@ Docker run.. create a new image...
 
 #####################################################################################################################
 ### V O L  U  M E S  ################################################################################################
+
+! Once image made, it becomes read ONLY.
+
+#### NODEMON #####
+
+# without nodemon CMD ["node", "app.js"]
+CMD ["npm","run","dev"]
+
+Add in begin of the file :
+
+#install nodemon befere
+#it is a packeg for node application, basicly it watch the files that is changed  and then restart the server when it detects a change
+#then add in packge json the script  "dev": "nodemon -L app.js" 
+RUN npm install -g nodemon
+
+
+
+#docker build -t myapp_c ( name of the container) -t nameOfVersio:nodemon . 
+# here, create the container, then create a image from this container
+
+#criar uma instancia com magem X e porta  Y 
+NOME + PORTA(externa:interna[do dentro do docker ]) + NOME-image 
+docker run --name simpleApiEdu -p 4100:4100  --rm myapp:tag 
+
+--rm tag, delete de container whem is stoped
+
+
+its necessary to add the path of the computer to make the reload 
+docker run --name myapp_c_nodemon -p 4000:4000 --rm -v C:\developer\studies\docker\simple api\api:/app  myapp:nodemon 
+This one make the changes only in file, not in node modules.
+> docker run --name myapp_c_nodemon -p 4000:4000 --rm -v C:\developer\studies\docker\simple api\api:/app -v /app/node_modules  myapp:nodemon 
