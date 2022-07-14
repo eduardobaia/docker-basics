@@ -8,3 +8,14 @@ services:
     volumes:
       - ./api:/app
       - ./app/node_modules
+  myblog:
+    build: ./myblog
+    container_name: myblogi_container
+    ports:
+    - '3000:3000'
+    # volumes:  this way just work in windows ou mac
+    #   - ./myblog:/app
+    #   - ./app/node_modules
+    stdin_open: true
+    tty: true
+    #this starts the container in interafiv mode.

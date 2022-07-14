@@ -83,3 +83,11 @@ docker-compose down --mri all -v ( remove also the volumes )
 1- Create docker file to specify how the image should be build.
 2- Add ignore file to node_modules
 3- create docker compose file
+   1: create a file .dockerignore 
+        a: add the folder to be ignored 
+            node_modules
+
+   2- Create Dockerfile in root folder react application
+               
+
+        
