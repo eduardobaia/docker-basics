@@ -65,3 +65,16 @@ its necessary to add the path of the computer to make the reload
 docker run --name myapp_c_nodemon -p 4000:4000 --rm -v C:\developer\studies\docker\simple api\api:/app  myapp:nodemon 
 This one make the changes only in file, not in node modules.
 > docker run --name myapp_c_nodemon -p 4000:4000 --rm -v C:\developer\studies\docker\simple api\api:/app -v /app/node_modules  myapp:nodemon 
+
+
+
+#delete all
+Docker system prune
+
+#usind docker compose.
+docker-compose up
+docker-compose down  #delete de container, but keeps the image.
+
+
+
+docker-compose down --mri all -v ( remove also the volumes )
